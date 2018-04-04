@@ -1,0 +1,21 @@
+--- # Pull Jenkins Image and Run
+
+- name: Building Jenkins Docker Image
+  become: no
+  docker_image:
+    path: "{{ playbook_dir }}"
+    name: ggnanasekaran77/ggnanasekaran
+    push: yes
+    force: yes
+
+- name: Starting Nginx Resume Container
+  become: no
+  docker_container:
+    name: "ggnanasekaran_{{http_port}}"
+    image: ggnanasekaran77/nginxlb
+    recreate: yes
+    pull: yes
+    ports:
+      - "{{http_port}}:80"
+      - "{{https_port}}:443"
+
