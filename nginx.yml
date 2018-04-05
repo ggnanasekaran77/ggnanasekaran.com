@@ -12,7 +12,7 @@
   become: no
   docker_container:
     name: "ggnanasekaran_{{http_port}}"
-    image: ggnanasekaran77/nginxlb
+    image: ggnanasekaran77/ggnanasekaran
     recreate: yes
     pull: yes
     ports:
