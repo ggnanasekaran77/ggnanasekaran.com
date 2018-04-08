@@ -7,7 +7,7 @@
     name: ggnanasekaran77/ggnanasekaran
     push: yes
     force: yes
-  delegate_to: "127.0.0.1"
+  delegate_to: "nginx-pri"
 
 - name: Starting Nginx Resume Container
   become: no
